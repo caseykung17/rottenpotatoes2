@@ -21,6 +21,6 @@ more_movies = [
 
 more_movies.each do |movie|
   Movie.find_or_create_by(title: movie[:title], release_date: movie[:release_date]) do |diff_movie|
-    movie.rating = diff_movie[:rating]
+    diff_movie.rating = movie[:rating]
   end
 end
