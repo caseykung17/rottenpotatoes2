@@ -2,15 +2,46 @@
 
 <% content_for :title, "Movies" %>
 
-<h1>Movies</h1>
+<h1>Rotten Potatoes</h1>
 
 <div id="movies">
-  <% @movies.each do |movie| %>
-    <%= render movie %>
-    <p>
-      <%= link_to "Show this movie", movie %>
-    </p>
-  <% end %>
+  <table>
+    <thead>
+      <tr style= "font-size: large">
+        <th>Title</th>
+        <th>Rating</th>
+        <th>Release Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @movies.each do |movie| %>
+        <tr>
+          <td><%= movie.title %></td>
+          <td><%= movie.rating %></td>
+          <td><%= movie.release_date %></td>
+          <td>
+            <%= link_to "Show Movie", movie, class: "button-link-show" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <% if @movies.any? %>
+        <% random_movie = @movies.sample %>
+        <tr>
+          <td colspan="4">Recommended Movie: 
+            <span style="color: #5b59b4; font-weight: bold; font-size: large;">
+            <%= random_movie.title %></span>
+          </td>
+        </tr>
+      <% else %>
+        <tr>
+          <td colspan="4">No movies available</td>
+        </tr>
+      <% end %>
+    </tfoot>
+  </table>
 </div>
 
-<%= link_to "New movie", new_movie_path %>
+<%= link_to "Add A Movie", new_movie_path, class: "button-link-add" %>
