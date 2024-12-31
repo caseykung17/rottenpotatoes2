@@ -1,37 +1,36 @@
-<%= form_with(model: movie) do |form| %>
+<%= form_with(model: movie, class: "movie-form") do |form| %>
   <% if movie.errors.any? %>
-    <div style="color: red">
+    <div class="form-errors">
       <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
-
       <ul>
-        <% movie.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% movie.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "form-input" %>
   </div>
 
   <div>
-    <%= form.label :rating, style: "display: block" %>
-    <%= form.text_field :rating %>
+    <%= form.label :rating %>
+    <%= form.text_field :rating, class: "form-input" %>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
+    <%= form.label :description %>
+    <%= form.text_field :description, class: "form-input" %>
   </div>
 
   <div>
-    <%= form.label :release_date, style: "display: block" %>
-    <%= form.text_field :release_date %>
+    <%= form.label :release_date %>
+    <%= form.text_field :release_date, class: "form-input" %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Submit", class: "form-submit" %>
   </div>
 <% end %>

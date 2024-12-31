@@ -81,9 +81,36 @@ h1 {
   margin-left: 35%;
   margin-right: 35%;
 }
-  
-.button-link:hover {
-  background-color: #4f4fba;
+
+.button-link-left {
+  padding: 10px 15px;
+  background-color: #4a4096;
+  color: white;
+  text-decoration: none;
+  font-size: large;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  width: 140px;
+}
+
+.button-link-destroy {
+  padding: 10px 15px;
+  background-color: #ab3939;
+  color: white;
+  text-decoration: none;
+  font-size: large;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 35%;
+  margin-right: 35%;
 }
 
 .sort-form-container {
@@ -133,3 +160,72 @@ h1 {
 .sort-form button:hover {
   background-color: #5e51b3;
 }
+
+.movie-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+  
+.movie-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #f4f8f8;
+    border: 2px solid #4a4096;
+    border-radius: 10px;
+    width: 350px;
+    margin: 0 auto;
+  }
+  
+  .movie-form label {
+    font-size: medium;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .form-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: medium;
+    background-color: #d8e9ef;
+    color: #333;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .form-submit {
+    padding: 10px 20px;
+    background-color: #4a4096;
+    color: white;
+    font-size: medium;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .form-submit:hover {
+    background-color: #5e51b3;
+  }
+  
+  .form-errors {
+    color: red;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+    background-color: #ffe5e5;
+  }
+  
+  .form-errors h2 {
+    margin-top: 0;
+  }
+  
+  .form-errors ul {
+    margin: 0;
+    padding-left: 20px;
+  }

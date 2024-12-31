@@ -15,7 +15,7 @@ more_movies = [
     :release_date => '22-Oct-2021'},
   {:title => 'Howl\'s Moving Castle', :rating => 'PG',
     :release_date => '24-Feb-2005'},
-  {:title => 'Kingsman: The Secret Service', :rating => 'R',
+  {:title => 'Kingsman: The Secret Service', :rating => 'M18',
     :release_date => '12-Feb-2015'}
 ]
 

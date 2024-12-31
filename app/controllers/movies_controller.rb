@@ -6,7 +6,21 @@ class MoviesController < ApplicationController
     # @movies = Movie.all
     column = params[:sort] || "title"
     sort_direction = params[:direction] || "asc"
-    @movies = Movie.order("#{column} #{sort_direction}")
+    
+    if column == "rating"
+      rating_order = "CASE rating
+                        WHEN 'G' THEN 1
+                        WHEN 'PG' THEN 2
+                        WHEN 'PG-13' THEN 3
+                        WHEN 'M18' THEN 4
+                        WHEN 'M' THEN 5
+                        WHEN 'R' THEN 6
+                        ELSE 7
+                      END"
+      @movies = Movie.order(Arel.sql("#{rating_order} #{sort_direction}"))
+    else
+      @movies = Movie.order("#{column} #{sort_direction}")
+    end
   end
 
   # GET /movies/1 or /movies/1.json

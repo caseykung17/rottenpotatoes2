@@ -1,10 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
+<h1>Movie Details</h1>
+
+<div>
+  <%= link_to "< Back To Movies", movies_path, class: "button-link-left" %>
+</div>
+
 <%= render @movie %>
 
 <div>
-  <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
-  <%= link_to "Back to movies", movies_path %>
-
-  <%= button_to "Destroy this movie", @movie, method: :delete %>
+  <%= link_to "Edit This Movie", edit_movie_path(@movie), class: "button-link-left" %>
 </div>
+
+<%= button_to "Destroy This Movie", @movie, method: :delete, class: "button-link-destroy" %>
