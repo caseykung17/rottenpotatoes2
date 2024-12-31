@@ -15,12 +15,11 @@ more_movies = [
     :release_date => '22-Oct-2021'},
   {:title => 'Howl\'s Moving Castle', :rating => 'PG',
     :release_date => '24-Feb-2005'},
-  {:title => 'Kingsman: The Secret Service', :rating => 'M18',
+  {:title => 'Kingsman: The Secret Service', :rating => 'R',
     :release_date => '12-Feb-2015'}
 ]
 
 more_movies.each do |movie|
-  Movie.find_or_create_by(title: movie[:title], release_date: movie[:release_date])
-    do |diff_movie| diff_movie.rating = movie[:rating]
+  Movie.find_or_create_by(title: movie[:title], release_date: movie[:release_date]) do |diff_movie| diff_movie.rating = movie[:rating]
   end
 end

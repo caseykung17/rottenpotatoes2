@@ -3,7 +3,10 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
-    @movies = Movie.all
+    # @movies = Movie.all
+    column = params[:sort] || "title"
+    sort_direction = params[:direction] || "asc"
+    @movies = Movie.order("#{column} #{sort_direction}")
   end
 
   # GET /movies/1 or /movies/1.json
@@ -65,6 +68,6 @@ class MoviesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def movie_params
-      params.expect(movie: [ :title, :rating, :description, :release_date ])
+      params.require(:movie).permit(:title, :rating, :description, :release_date)
     end
 end

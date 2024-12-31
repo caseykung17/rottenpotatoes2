@@ -65,7 +65,7 @@ h1 {
   cursor: pointer;
 }
 
-.button-link-add {
+.button-link-middle {
   padding: 10px 15px;
   background-color: #4a4096;
   color: white;
@@ -84,4 +84,52 @@ h1 {
   
 .button-link:hover {
   background-color: #4f4fba;
+}
+
+.sort-form-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.sort-form {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f4f8f8;
+  padding: 10px 15px;
+  border: 2px solid #4a4096;
+  border-radius: 8px;
+}
+  
+.sort-form label {
+  font-size: medium;
+  font-weight: bold;
+  color: #333;
+}
+  
+.sort-form select {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: medium;
+  background-color: #d8e9ef;
+  color: #333;
+  cursor: pointer;
+}
+  
+.sort-form button {
+  padding: 5px 15px;
+  background-color: #4a4096;
+  color: white;
+  font-size: medium;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sort-form button:hover {
+  background-color: #5e51b3;
 }

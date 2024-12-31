@@ -4,6 +4,25 @@
 
 <h1>Rotten Potatoes</h1>
 
+<div class="sort-form-container">
+  <form method="get" action="<%= movies_path %>" class="sort-form">
+    <label for="sort">Sort By:</label>
+    <select name="sort" id="sort">
+      <option value="title" <%= "selected" if params[:sort] == "title" %>>Title</option>
+      <option value="rating" <%= "selected" if params[:sort] == "rating" %>>Rating</option>
+      <option value="release_date" <%= "selected" if params[:sort] == "release_date" %>>Release Date</option>
+    </select>
+
+    <label for="direction">Order:</label>
+    <select name="direction" id="direction">
+      <option value="asc" <%= "selected" if params[:direction] == "asc" %>>Ascending</option>
+      <option value="desc" <%= "selected" if params[:direction] == "desc" %>>Descending</option>
+    </select>
+
+    <button type="submit">Sort</button>
+  </form>
+</div>
+
 <div id="movies">
   <table>
     <thead>
@@ -44,4 +63,4 @@
   </table>
 </div>
 
-<%= link_to "Add A Movie", new_movie_path, class: "button-link-add" %>
+<%= link_to "Add A Movie", new_movie_path, class: "button-link-middle" %>
